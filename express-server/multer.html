@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 단건-->
+  <form name="singleForm">
+    <input type="file" name="avatar">
+    <button type="button">단건등록</button>
+    <input type="file" multiple>
+    <button type="button" id="upBtn">멀티등록</button>
+  </form>
+  <script>
+    singleForm.querySelector('button').addEventListener('click', function (event) {
+      let formData = new FormData(singleForm);
+      fetch('http://localhost:5000/profile', {
+          method: 'post',
+          body: formData,
+        }) 
+        .then(res => res.json())
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => console.log(err));
+    });
+
+    document.querySelector('#upBtn').addEventListener('click', function (event) {
+      let inputTag = event.currentTarget.previousElementSibling;
+      let fileList = inputTag.files;
+      let formData = new FormData();
+      for (let file of fileList) {
+        formData.append('photos', file);
+      }
+      fetch('http://localhost:5000/photos', {
+          method: 'post',
+          body: formData,
+        })
+        .then(res => res.json())
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => console.log(err));
+    });
+
+  </script>
+  <!-- multiple-->
+</body>
+
+</html>
