@@ -1,6 +1,6 @@
 // js with server/03_sort.js
 let fruits = ["Banana", "Orange",
-               "Apple", "Moango"];
+              "Apple", "Mango"];
 fruits.sort();
 console.log(fruits);
 
@@ -9,6 +9,6 @@ points.sort();
 console.log(points);
 
 points.sort(function(a,b){
-  return a-b;
-})
+  return a-b; 
+});
 console.log(points);

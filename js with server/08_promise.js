@@ -1,11 +1,12 @@
 // js with server/08_promise.js
-let timeAsync = new Promise((resolve, reject) => {
-  //비동기 작업
+let timeAsync = new Promise((resolve, reject)=>{
+  // 비동기 작업 등록
   let result = false;
 
-  setTimeout(() => {
+  setTimeout(()=>{
     result = true;
     console.log('비동기 작업 수행');
+
     if(result){
       resolve('result : 성공');
     }else{
@@ -14,7 +15,7 @@ let timeAsync = new Promise((resolve, reject) => {
   }, 3000);
 });
 
-// console.log(timeAsync);
+//console.log(timeAsync);
 timeAsync
 .then((success)=>{
   console.log(success);

@@ -1,6 +1,6 @@
 // js with server/05_spread_operator.js
-let a = [1, 3, 5];
-let b = [10, 20];
+let a = [ 1 , 3, 5];
+let b = [ 10, 20];
 
 let newList = [...b, ...a];
 console.log(newList);

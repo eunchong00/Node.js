@@ -1,4 +1,4 @@
-//js with server/01_const.js
+// js with server/01_const.js
 const count = 0;
 
 //var count = 10;

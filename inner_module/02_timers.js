@@ -1,16 +1,16 @@
-// inner_module/02_timers.js | 1000 = 1초
-const timeout = setTimeout(() => {
+// inner_module/02_timers.js
+function showTime(){
   let today = new Date();
   console.log(today.toLocaleTimeString());
-}, 2000);
-
+}
 showTime();
-const interval = setTimeout(()=>{
+const timeout = setTimeout(()=>{
   showTime();
 }, 2000);
 
 let count = 0;
-interval = setInterval(()=>{
+const interval = setInterval(()=>{
+  showTime();
   console.log('interval %d', count++);
   if(count == 2){
     clearInterval(interval);

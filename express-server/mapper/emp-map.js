@@ -4,7 +4,7 @@ const filePath = path.join(__dirname, 'data.json');
 
 // DB 설정
 const jsonFile = fs.readFileSync(filePath);
-const jsonData = JSON.parse(jsonFile);
+const jsonData = JSON.parse(jsonFile); // JSON -> javscript object or array
 
 const query = (crud, target, where = null)=>{
   let result = null;
@@ -61,5 +61,5 @@ function findEmp(emp, where){
 }
 
 module.exports = { 
-  query,
+  query, 
 }
