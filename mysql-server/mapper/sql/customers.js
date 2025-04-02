@@ -11,6 +11,5 @@ order by id`;
 
 
 module.exports = {
-  selectAll,
   // 'selectAll' : selectAll
 }
